@@ -3,7 +3,44 @@
 {% block title %} Contact {% endblock %}
 
 {% block content %}
-<h1>how to contact me</h1>
-<h3> Tom Chau informaiton</h3>
-
+<section id="contact" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">Get In Touch</h2>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Contact Information</h4>
+                        <p class="card-text"><i class="fas fa-envelope me-2"></i> Tom.Chau@codeninjas.com</p>
+                        <p class="card-text"><i class="fas fa-phone me-2"></i> (123) 456-7890</p>
+                        <p class="card-text"><i class="fas fa-map-marker-alt me-2"></i> Garden Grove, CA</p>
+                        <div class="social-icons mt-4">
+                            <a href="#" class="me-3"><i class="fab fa-github fa-2x"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-linkedin fa-2x"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

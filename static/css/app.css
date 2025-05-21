@@ -1,16 +1,31 @@
-
-html, body {
+html,
+body {
     padding: 0;
     margin: 0;
     min-height: 100vh;
 }
+
 body {
-    background-color: aquamarine;
+    background-color: lightgreen;
 }
 
 .navbar {
 
-  background: #6a11cb;
-  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
-  background: linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
+    background: #6a11cb;
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
+    background: linear-gradient(to right, rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9));
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 30px 0;
+}
+.profile-img {
+    width: 400px;
+}
+
+
+i {
+    font-size: 80px;
 }
