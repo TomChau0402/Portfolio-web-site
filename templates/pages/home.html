@@ -4,13 +4,14 @@
 {% block title %} Welcome {% endblock %}
 
 {% block content %}
+
 <section class="hero-section">
     <div class="container">
         <img src="{% static './img/tom.png' %}" alt="Profile Image" class="profile-img mb-4">
         <h1 class="display-4 fw-bold">Tom Chau</h1>
         <p class="lead">Web Developer & Designer</p>
         <div class="mt-4">
-            <a href="#contact" class="btn btn-primary btn-lg me-2">Hire Me</a>
+            <a href="{% url 'contact' %}" class="btn btn-primary btn-lg me-2">Hire Me</a>
             <a href="#projects" class="btn btn-primary btn-lg me-2">View Work</a>
         </div>
     </div>

@@ -12,14 +12,17 @@
 {% block content %}
 
 <div class="note-list">
-    <h1> These are notes</h1>
+    <div class="title-row">
+        <h1> These are notes</h1>
+        <a class="btn btn-outline-primary" href="{% url 'note_create' %}"> Create Note</a>
+    </div>
 
-    <div clss="list">
+    <div class="list">
         {% for note in note_list %}
         <div class="note">
 
             {% if note.image %}
-            <img src=" {{ note.image.url }}">
+            <img class="note-img" src=" {{ note.image.url }}">
 
             {% endif %}
 
