@@ -13,7 +13,7 @@
     margin-right: 10px;
     margin-bottom: 10px;
     vertical-align: top;
-    height: 250px;
+    height: 280px;
     background-color: rgb(224, 236, 230);
 }
 
@@ -29,6 +29,28 @@
     padding-right: 10px;
 }
 
+.note-details {
+    max-width: 800px;;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.note-details .main-img {
+    max-width: 100%;
+}
+
+.note-details h3 {
+    margin-top: 20px;
+    margin-bottom: 20;
+    color: darkcyan;
+}
+.note-details p {
+    white-space: pre-wrap;
+}
+.note-details .date {
+    font-size: 12px;
+    color: grey;
+}
 
 
 @media(max-width:767px) {
@@ -53,4 +75,5 @@
     height: unset;
     max-height: unset;
 }
+
 }
