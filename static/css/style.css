@@ -220,6 +220,19 @@ nav ul li a:hover {
     resize: vertical;
 }
 
+.project-card {
+    height: 400px !important;
+
+}
+
+.img-container{
+    height: 200px !important;   
+}
+
+.card-img-top{
+    height: 100%;
+}
+
 /* Footer */
 footer {
     background: var(--secondary-color);
