@@ -75,5 +75,24 @@
     height: unset;
     max-height: unset;
 }
+.note-details .comment{
+    padding: 10px;
+    background-color: azure;
+    border: 1px solid white;
+    margin-bottom: 10 px;
+    border-radius: 6px;
+}
+.note-details .comment p {
+    margin: 3px;
+        
+}
+.note-details .comment .author {
+    font-weight: 600;
+    color: rgb(87, 135, 135);
+}
 
+.note-details .comment .date {
+    font-size: 12px;
+    color:#434445;
+}
 }

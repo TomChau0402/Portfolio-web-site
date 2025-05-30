@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DetailView, UpdateView,DeleteView, View
+from .models import Note, NoteComment
 from .models import Note
 from .forms import NoteForm
 from django.urls import reverse_lazy
@@ -34,6 +35,16 @@ class NoteCreate (CreateView):
 class NoteDetail(DetailView):
     model = Note
     template_name = "notes/detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # load all comment for this note
+        note = self.object
+        comments = NoteComment.objects.filter(note=note).prefetch_related("author")
+        context["comments"] = comments
+        return context
+    
+      
 
 class NoteUpdate(UpdateView):
     model = Note

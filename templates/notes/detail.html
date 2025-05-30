@@ -12,19 +12,34 @@
 {% block content %}
 
 <div class="note-details">
-{% if note.image %}
+    {% if note.image %}
     <img src="{{ note.image.url}}">
-{% endif %}
+    {% endif %}
 
-<h3>{{ note.title }}</h3>
+    <h3>{{ note.title }}</h3>
 
 
-<p>{{ note.content }}</p>
+    <p>{{ note.content }}</p>
 
-<label class="date">{{ note.created_on }}</label>
+    <label class="date">{{ note.created_on }}</label>
+
+    <hr>
+    <h3> Comments </h3>
+
+    <div class="comments">
+        {% for cmt in comments %}
+        <div class="comment">
+            <label>{{cmt.author.username}}</label>
+            <p>{{cmt.content}}</p>
+            <label class="date">{{cmt.created_on}}</label>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
 <div class="control">
-<a class="btn btn-sm btn-primary" href="{% url 'note_update' note.id %}"> Edit Note</a>
-<a class="btn btn-sm btn-danger" href="{% url 'note_delete' note.id %}">Delete Note</a>
+    <a class="btn btn-sm btn-primary" href="{% url 'note_update' note.id %}"> Edit Note</a>
+    <a class="btn btn-sm btn-danger" href="{% url 'note_delete' note.id %}">Delete Note</a>
 </div>
 
 </div>
