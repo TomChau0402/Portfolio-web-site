@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView, DetailView, UpdateView,DeleteView, View
 from .models import Note, NoteComment
 from .models import Note
@@ -60,6 +60,25 @@ class NoteDelete(DeleteView):
     model = Note
     template_name = "notes/delete.html"
     success_url = reverse_lazy('note_list')
+
+def save_comment(request):
+     note_id = request.POST.get('note_id')
+     content = request.POST.get('content')
+     author = request.user #logged in user
+
+     # read the note record from teh DB
+
+     note = Note.objects.get(id=note_id)
+
+     # create the comment record
+     comment = NoteComment.objects.create(
+          note =note,
+          content = content,
+          author = author
+     )
+
+     comment.save()
+     return redirect('note_details', pk=note_id)
 
 
 

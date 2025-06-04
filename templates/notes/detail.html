@@ -29,11 +29,27 @@
     <div class="comments">
         {% for cmt in comments %}
         <div class="comment">
-            <label>{{cmt.author.username}}</label>
+            <label class="author">{{cmt.author.username}}</label>
             <p>{{cmt.content}}</p>
             <label class="date">{{cmt.created_on}}</label>
         </div>
         {% endfor %}
+
+        <!-- form to create new comments-->
+         {% if user.is_authenticated %}
+        <div class="comment">
+            <form method="post" action="{% url 'save_comment' %}">
+                {% csrf_token %}
+                <label class="author"> Create new comments</label>
+                <input type="hidden" value="{{note.id}}" name="note_id">
+                <textarea required name="content" row="3" class="form-control"></textarea>
+                <button class="btn btn-sm btn-info"> Post Comment</button>
+
+            </form>
+
+
+        </div>
+         {% endif %}
     </div>
 </div>
 </div>

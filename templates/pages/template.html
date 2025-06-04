@@ -3,19 +3,136 @@
 {% block title %} Template Projects {% endblock %}
 {% load static %}
 {% block css %}
-
 <link rel="stylesheet" href="{% static 'css/notes.css' %}">
 {% endblock %}
 
-
-
 {% block content %}
+<div class="template-projects-container">
+    <header class="projects-header">
+        <h1>My Template Projects Collection</h1>
+        <p class="subtitle">Ready-to-use templates for various web development needs</p>
+    </header>
 
-<div class="note-website">
-    <h1>These are my Templates projects</h1>
+    <section class="projects-intro">
+        <p>Welcome to my template projects showcase. Here you'll find a collection of reusable templates I've created for different purposes. Feel free to explore and use them in your own projects!</p>
+    </section>
 
-    
+    <div class="projects-filter">
+        <label for="category-filter">Filter by category:</label>
+        <select id="category-filter">
+            <option value="all">All Templates</option>
+            <option value="web">Website Templates</option>
+            <option value="email">Email Templates</option>
+            <option value="ui">UI Components</option>
+            <option value="admin">Admin Dashboards</option>
+        </select>
+    </div>
 
-  
+    <div class="projects-grid">
+        <!-- Template Project 1 -->
+        <div class="project-card" data-category="web">
+            <div class="project-image">
+                <img src="{% static './img/project2.jpg' %}" alt="Responsive Blog Template">
+                <div class="project-badge">New</div>
+            </div>
+            <div class="project-details">
+                <h3>Responsive Blog Template</h3>
+                <p class="project-description">A clean, mobile-first blog template with dark/light mode toggle.</p>
+                <div class="project-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="btn-preview">Live Preview</a>
+                    <a href="#" class="btn-download">Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template Project 2 -->
+        <div class="project-card" data-category="email">
+            <div class="project-image">
+                <img src="{% static 'images/template2-preview.jpg' %}" alt="Newsletter Email Template">
+            </div>
+            <div class="project-details">
+                <h3>Newsletter Email Template</h3>
+                <p class="project-description">Responsive email template compatible with major email clients.</p>
+                <div class="project-tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">Email</span>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="btn-preview">Live Preview</a>
+                    <a href="#" class="btn-download">Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template Project 3 -->
+        <div class="project-card" data-category="ui">
+            <div class="project-image">
+                <img src="{% static 'images/template3-preview.jpg' %}" alt="E-commerce Product Card">
+            </div>
+            <div class="project-details">
+                <h3>E-commerce Product Card</h3>
+                <p class="project-description">Interactive product card component with hover effects.</p>
+                <div class="project-tags">
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="btn-preview">Live Preview</a>
+                    <a href="#" class="btn-download">Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template Project 4 -->
+        <div class="project-card" data-category="admin">
+            <div class="project-image">
+                <img src="{% static 'images/template4-preview.jpg' %}" alt="Admin Dashboard">
+            </div>
+            <div class="project-details">
+                <h3>Admin Dashboard Template</h3>
+                <p class="project-description">Complete admin dashboard with charts, tables, and widgets.</p>
+                <div class="project-tags">
+                    <span class="tag">Bootstrap</span>
+                    <span class="tag">jQuery</span>
+                    <span class="tag">Charts.js</span>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="btn-preview">Live Preview</a>
+                    <a href="#" class="btn-download">Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <h2>Need a Custom Template?</h2>
+        <p>If you don't see what you're looking for, I can create a custom template tailored to your specific needs.</p>
+        <a href="{% url 'contact' %}" class="btn-contact">Contact Me</a>
+    </section>
+
+    <div class="project-stats">
+        <div class="stat-item">
+            <span class="stat-number">24+</span>
+            <span class="stat-label">Templates</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">15K+</span>
+            <span class="stat-label">Downloads</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">4.8</span>
+            <span class="stat-label">Average Rating</span>
+        </div>
+    </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/template-projects.js' %}"></script>
 {% endblock %}
