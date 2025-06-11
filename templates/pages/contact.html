@@ -15,32 +15,53 @@
                         <p class="card-text"><i class="fas fa-phone me-2"></i> (123) 456-7890</p>
                         <p class="card-text"><i class="fas fa-map-marker-alt me-2"></i> Garden Grove, CA</p>
                         <div class="social-icons mt-4">
-                            <a href="https://github.com/" class="me-3" target="_blank"><i
+                            <a href="https://github.com/TomChau0402" class="me-3" target="_blank"><i
                                     class="fab fa-github fa-2x"></i></a>
                             <a href="https://www.linkedin.com/in/tung-chau/" class="me-3" target="_blank"><i
                                     class="fab fa-linkedin fa-2x"></i></a>
                             <a href="#" class="me-3"><i class="fab fa-twitter fa-2x"></i></a>
-                            <a href="https://www.instagram.com/" target="_blank"><i
+                            <a href="https://www.instagram.com/tom_chau_0402/" target="_blank"><i
                                     class="fab fa-instagram fa-2x"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
-                <form>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" class="form-control" placeholder="Your Email" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Subject">
-                    </div>
-                    <div class="mb-3">
-                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                <!--
+            <form method="post" id="contactForm" class="center-column">
+                {% csrf_token %}
+                {{form.name}}
+                {{form.email}}
+                {{form.message}}
+
+                <div class="form-controller">
+
+                    <button type="reset"> Reset</button>
+                    <button type="submit">Send Message</button>
+                </div>
+
+            </form>
+                   -->
+
+                    <form method="post">
+                        {% csrf_token %}
+                
+                        <div class="mb-3">
+                            <input name="name" type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input name="email" type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+
+                    </form>
+                
                 </form>
             </div>
         </div>
