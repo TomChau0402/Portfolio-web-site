@@ -27,41 +27,26 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <!--
-            <form method="post" id="contactForm" class="center-column">
-                {% csrf_token %}
-                {{form.name}}
-                {{form.email}}
-                {{form.message}}
+                <form method="post">
+                    {% csrf_token %}
 
-                <div class="form-controller">
+                    <div class="mb-3">
+                        <input name="name" type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input name="email" type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" class="form-control" rows="5" placeholder="Your Message"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
 
-                    <button type="reset"> Reset</button>
-                    <button type="submit">Send Message</button>
-                </div>
+                </form>
 
-            </form>
-                   -->
-
-                    <form method="post">
-                        {% csrf_token %}
-                
-                        <div class="mb-3">
-                            <input name="name" type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input name="email" type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="mb-3">
-                            <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-
-                    </form>
-                
                 </form>
             </div>
         </div>
