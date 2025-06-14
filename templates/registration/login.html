@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-wrapper">
+        <!-- Optional left side with image -->
+        <div class="login-image">
+            <img src="{% static './img/collab.webp' %}" alt="Welcome" class="login-img">
+            
+        </div>
+        
+        <!-- Login form -->
+        <div class="login-form">
+            <h1 class="login-title">Login</h1>
+            <p class="login-subtitle">Please enter your credentials</p>
+            
+            <form method="POST" class="auth-form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">Username</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <div class="error-message">{{ form.username.errors }}</div>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.password.id_for_label }}">Password</label>
+                    {{ form.password }}
+                    {% if form.password.errors %}
+                        <div class="error-message">{{ form.password.errors }}</div>
+                    {% endif %}
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-login">Sign In</button>
+                    <a href="{% url 'password_reset' %}" class="forgot-password">Forgot password?</a>
+                </div>
+            </form>
+            
+            <div class="login-footer">
+                <p>Don't have an account? >Sign up</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

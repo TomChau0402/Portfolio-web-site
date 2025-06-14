@@ -1,264 +1,232 @@
-.note-list h1 {
-    text-align: center;
-    color: darkblue;
-    flex: 1;
-}
-
-.note-list .note {
-    border: 1px solid #333;
-    border-radius: 4px;
-    width: 250px;
-    display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    vertical-align: top;
-    height: 280px;
-    background-color: rgb(224, 236, 230);
-}
-
-.note-list .note-img {
-    width: 100%;
-    max-height: 160px;
-    ;
-
-
-}
-
-.note-list .title-row {
-    display: flex;
-    align-items: center;
-    padding-right: 10px;
-}
-
-.note-details {
-    max-width: 800px;
-    ;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.note-details .main-img {
-    max-width: 100%;
-}
-
-.note-details h3 {
-    margin-top: 20px;
-    margin-bottom: 20;
-    color: darkcyan;
-}
-
-.note-details p {
-    white-space: pre-wrap;
-}
-
-.note-details .date {
-    font-size: 12px;
-    color: grey;
-}
-
-/* Main Container */
-.template-projects-container {
+/* Base Styles */
+.note-list {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 2 rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    color: #333;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-/* Header Styles */
-.projects-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.projects-header h1 {
-    font-size: large;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-}
-
-.projects-header .subtitle {
-    font-size: 1.2rem;
-    color: #7f8c8d;
-}
-
-/* Intro Section */
-.projects-intro {
-    background-color: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-}
-
-/* Filter Controls */
-.projects-filter {
-    margin-bottom: 2rem;
+.title-row {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
-.projects-filter label {
-    font-weight: 600;
+.title-row h1 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
 }
 
-.projects-filter select {
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    background-color: white;
-    font-size: 1rem;
-}
-
-/* Button styles to match Bootstrap */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.15s ease;
-    border: 1px solid transparent;
-}
-
-.btn-primary {
-    background-color: #0d6efd;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #0b5ed7;
-}
-
-.btn-outline-secondary {
-    background-color: transparent;
-    color: #6c757d;
-    border-color: #6c757d;
-}
-
-.btn-outline-secondary:hover {
-    background-color: #6c757d;
-    color: white;
-}
-
-.me-2 {
-    margin-right: 0.5rem !important;
-}
-
-/* If icons aren't showing */
-.bi::before {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-    font-family: "bootstrap-icons";
-}
-
-.btn-primary {
-    background: blueviolet;
-    color: white;
-    box-shadow: 0 4px 6px rgba(67, 97, 238, 0.2);
-}
-
-
-
-/* Projects Grid */
-.projects-grid {
+/* Notes Grid Layout */
+.list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 0;
 }
 
-/* Project Card Styles */
-.project-card {
-    border: 1px solid #e0e0e0;
+.note {
+    background: #fff;
     border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #eee;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.note:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.project-image {
-    position: relative;
-    height: 180px;
-    overflow: hidden;
-}
-
-.project-image img {
+/* Note Image */
+.note-img {
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    border-radius: 4px;
+    margin-bottom: 1rem;
 }
 
-.project-card:hover .project-image img {
-    transform: scale(1.05);
+/* Note Content */
+.note h3 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
 }
 
-.project-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #e74c3c;
+.note label {
+    display: block;
+    font-size: 0.875rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+/* Controls (Buttons) */
+.controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn {
+    padding: 0.5}
+
+    /* Note Details Page */
+.note-details {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.note-details img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.note-details h3 {
+    font-size: 1.75rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.note-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #34495e;
+    margin-bottom: 1.5rem;
+}
+
+.note-details .date {
+    display: block;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+/* Comments Section */
+.comments {
+    margin-top: 2rem;
+}
+
+.comments h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.comment {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border-left: 3px solid #3498db;
+}
+
+.comment .author {
+    font-weight: bold;
+    color: #3498db;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.comment .date {
+    font-size: 0.8rem;
+    color: #95a5a6;
+    margin-top: 0.5rem;
+}
+
+/* Comment Form */
+.comment form {
+    margin-top: 1.5rem;
+}
+
+.comment form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.comment form button {
+    background: #3498db;
     color: white;
-    padding: 0.25rem 0.5rem;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-@media(max-width:767px) {
-    /* CSS for MOBILE*/
+.comment form button:hover {
+    background: #2980b9;
+}
 
-    .note-list .title-row {
+/* Controls (Edit/Delete Buttons) */
+.control {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: flex-end;
+}
+
+.control .btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.control .btn-primary {
+    background: #3498db;
+    color: white;
+    border: 1px solid #3498db;
+}
+
+.control .btn-primary:hover {
+    background: #2980b9;
+    border-color: #2980b9;
+}
+
+.control .btn-danger {
+    background: #e74c3c;
+    color: white;
+    border: 1px solid #e74c3c;
+}
+
+.control .btn-danger:hover {
+    background: #c0392b;
+    border-color: #c0392b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .note-details {
+        padding: 1rem;
+    }
+
+    .control {
         flex-direction: column;
-        padding-right: unset;
-        margin-bottom: 12px;
+        gap: 0.5rem;
     }
 
-    .note-list .note {
+    .control .btn {
         width: 100%;
-        margin: 12px;
-    }
-
-    .note-list .list {
-        padding: 0 12px;
-    }
-
-    .note-list .note img {
-        width: 100%;
-        height: unset;
-        max-height: unset;
-    }
-
-    .note-details .comment {
-        padding: 10px;
-        background-color: azure;
-        border: 1px solid white;
-        margin-bottom: 10 px;
-        border-radius: 6px;
-    }
-
-    .note-details .comment p {
-        margin: 3px;
-
-    }
-
-    .note-details .comment .author {
-        font-weight: 600;
-        color: rgb(87, 135, 135);
-    }
-
-    .note-details .comment .date {
-        font-size: 12px;
-        color: #434445;
+        text-align: center;
     }
 }

@@ -6,7 +6,21 @@
     --dark-color: #2c3e50;
     --accent-color: #e74c3c;
 }
+.hero-section .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+}
 
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-content {
+    flex: 1;
+}
 * {
     margin: 0;
     padding: 0;

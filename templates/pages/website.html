@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+
+
 {% block title %} Webiste Projects {% endblock %}
 {% load static %}
 {% block css %}
@@ -52,7 +54,7 @@
 
         <section id="portfolio" class="section">
             <div class="container">
-                <h2>My Work</h2>
+                <h2>My Work and Portfolio</h2>
                 <div class="portfolio-grid">
                     <div class="portfolio-item">
                         <img src="{% static './img/smiling computer.jpg' %}" alt="Project 1">
@@ -66,7 +68,7 @@
                         <h3>Real Estate and Travel</h3>
                         <p>A custom WordPress theme for a travel blogger, with interactive maps, photo galleries, and a
                             newsletter subscription system.</p>
-                        <a href="https://tomchau0402.github.io/realEstate/"  traget="_blank" class="btn">View Project</a>
+                        <a href="https://tomchau0402.github.io/realEstate/"  target="_blank" class="btn">View Project</a>
                     </div>
                     <div class="portfolio-item">
                         <img src="{% static './img/computer100.avif' %}" alt="Project 3">
@@ -117,18 +119,33 @@
                         <p><i class="fas fa-envelope"></i> Tom.Chau@codeninjas.com</p>
                         <p><i class="fas fa-phone"></i> (123) 456-7890</p>
                         <div class="social-links">
-                            <a href="https://github.com/"><i class="me-3" target="_blank"></i></a>
-                            <a href="https://www.linkedin.com/in/tung-chau/"><i class="me-3" target="_blank"></i></a>
+                            <a href="https://github.com/"><i class="fab fa-github" target="_blank"></i></a>
+                            <a href="https://www.linkedin.com/in/tung-chau/"><i class="fab fa-linkedin" target="_blank"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.instagram.com/"><i class="me-3" target="_blank"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fab fa-instagram" target="_blank"></i></a>
                         </div>
                     </div>
-                    <form class="contact-form">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                      <div class="col-lg-6">
+                <form method="post">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <input name="name" type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input name="email" type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" class="form-control" rows="5" placeholder="Your Message"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+
+                </form>
+                
                 </div>
             </div>
         </section>
