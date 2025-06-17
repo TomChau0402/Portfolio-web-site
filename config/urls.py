@@ -24,6 +24,7 @@ urlpatterns = [
     path('notes/', include ('notes.urls')),
     path('', include ("django.contrib.auth.urls")),
     path('', include ('pages.urls')),
+
  
 ]
 

@@ -61,3 +61,6 @@ def website_view(request):
 
 def template_view(request):
     return render(request, 'pages/template.html')
+
+def resume_view(request):
+    return render(request, 'pages/resume.html')
