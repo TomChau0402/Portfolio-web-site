@@ -36,7 +36,8 @@ SECRET_KEY = 'django-insecure-@%gb!lckzi7t&&fw)5h@a*u-cgx6e-d_zdkz6b875up$%^xi6c
 DEBUG = True
 
 ALLOWED_HOSTS = [
-'capstone-ch54-d39b89c29de9.herokuapp.com'
+'capstone-ch54-d39b89c29de9.herokuapp.com',
+'127.0.0.1'
 ]
 
 # Application definition
@@ -139,6 +140,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# if running in heroku, use postgre db instead of sqlite
+if "DYNO" in os.environ:
+    import django_heroku
+    django_heroku.setting(locals())
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
