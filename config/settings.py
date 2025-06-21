@@ -144,7 +144,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # if running in heroku, use postgre db instead of sqlite
 if "DYNO" in os.environ:
     import django_heroku
-    django_heroku.setting(locals())
+    django_heroku.settings(locals())
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
