@@ -14,8 +14,8 @@
 }
 
 .hero-image {
-    flex: 1;
-    max-width: 50%;
+    flex: 12;
+    max-width: 30%;
 }
 
 .hero-content {
@@ -85,7 +85,7 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    margin-top: 20px;
+    padding: 14px 0px;
 }
 
 nav ul li {
@@ -256,6 +256,13 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width:992px){
+ .hero-section .container {
+        flex-direction: column;
+    }
+}
+
+
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
@@ -265,4 +272,5 @@ footer {
     .contact-content {
         flex-direction: column;
     }
+
 }

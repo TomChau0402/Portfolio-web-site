@@ -24,6 +24,12 @@ environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# secure connection
+os.environ["SSL_CERT_FILE"] = certifi.where()
+
+# read env file
+env = environ.Env()
+environ.Env.read_env()
 
 
 # Quick-start development settings - unsuitable for production
@@ -155,5 +161,27 @@ EMAIL_HOST_USER=env("EMAIL_USER")
 EMAIL_HOST_PASSWORD=env("EMAIL_KEY")
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "login"
+
+
+## AWS config
+AWS_ACCESS_KEY_ID=env("AWS_ACCESS_KEY")
+AWS_SECRET_ACCESS_KEY=env("AWS_SECRET_KEY")
+AWS_STORAGE_BUCKET_NAME=env("AWS_BUCKET")
+AWS_S3_REGION_NAME=env("AWS_REGION")
+AWS_QUERYSTRING_AUTH=False
+
+MEDIA_URL = f"https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/"
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = "public-read"
+
+STORAGES = { 
+    "default": {
+        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+    },    
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 
 
